@@ -6,7 +6,7 @@ include(cmake/build-guard.cmake)
 include(cmake/compiler_settings.cmake)
 
 # --- Main Library ---
-add_library(charts_lib OBJECT src/charts/application.cpp src/charts/application.hpp src/charts/cli/parse_arguments.hpp)
+add_library(charts_lib OBJECT src/charts/application.cpp src/charts/application.hpp src/charts/analysis/tag_storage.hpp src/charts/analysis/element.hpp src/charts/analysis/linked_element.hpp src/charts/analysis/binary_tree_element.hpp src/charts/analysis/graph_element.hpp src/charts/analysis/container_element.hpp)
 target_include_directories(charts_lib PUBLIC "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src>")
 target_compile_features(charts_lib PUBLIC cxx_std_17)
 
@@ -22,7 +22,7 @@ target_link_libraries(charts_exe PRIVATE charts_lib)
 
 # --- Tests ---
 include(cmake/catch2.cmake)
-add_executable(tests src/charts/application_test.cpp src/charts/cli/parse_arguments_test.cpp)
+add_executable(tests src/charts/application_test.cpp)
 target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
 
 # Clang-format
