@@ -6,7 +6,7 @@
 
 #include <string>
 
-#include "tag_storage.hpp"
+#include "charts/analysis/tag_storage.hpp"
 
 namespace charts::analysis {
 

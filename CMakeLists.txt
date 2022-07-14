@@ -6,7 +6,7 @@ include(cmake/build-guard.cmake)
 include(cmake/compiler_settings.cmake)
 
 # --- Main Library ---
-add_library(charts_lib OBJECT src/charts/application.cpp src/charts/application.hpp src/charts/analysis/tag_storage.hpp src/charts/analysis/element.hpp src/charts/analysis/linked_element.hpp src/charts/analysis/binary_tree_element.hpp src/charts/analysis/graph_element.hpp src/charts/analysis/container_element.hpp)
+add_library(charts_lib OBJECT src/charts/application.cpp src/charts/application.hpp src/charts/analysis/tag_storage.hpp src/charts/analysis/elements/element.hpp src/charts/analysis/elements/linked_element.hpp src/charts/analysis/elements/binary_tree_element.hpp src/charts/analysis/elements/graph_element.hpp src/charts/analysis/elements/container_element.hpp)
 target_include_directories(charts_lib PUBLIC "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src>")
 target_compile_features(charts_lib PUBLIC cxx_std_17)
 
