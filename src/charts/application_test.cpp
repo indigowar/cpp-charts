@@ -3,13 +3,10 @@
 //
 #include <catch2/catch_test_macros.hpp>
 
-unsigned int Factorial( unsigned int number ) {
-  return number <= 1 ? number : Factorial(number-1)*number;
-}
+#include "application.hpp"
 
-TEST_CASE( "Catch2 is worked!", "[catch2]" ) {
-  REQUIRE( Factorial(1) == 1 );
-  REQUIRE( Factorial(2) == 2 );
-  REQUIRE( Factorial(3) == 6 );
-  REQUIRE( Factorial(10) == 3628800 );
+TEST_CASE("Application is working", "[application]") {
+  charts::application app(0, nullptr);
+
+  REQUIRE(app.run() == EXIT_SUCCESS);
 }

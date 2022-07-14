@@ -23,7 +23,7 @@ target_link_libraries(charts_exe PRIVATE charts_lib)
 # --- Tests ---
 include(cmake/catch2.cmake)
 add_executable(tests src/charts/application_test.cpp)
-target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(tests PRIVATE Catch2::Catch2WithMain charts_lib)
 
 # Clang-format
 include(cmake/clang-format.cmake)
